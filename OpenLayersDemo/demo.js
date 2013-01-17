@@ -93,6 +93,7 @@ function init() {
     featarray.push(addConstituency(constituencies[key], map.getProjectionObject()));
     }
  var control = new OpenLayers.Control.SelectFeature(pointLayer);
+ control.handlers.feature.stopDown = false; 
  map.addControl(control);
  control.activate();
     pointLayer.addFeatures(featarray);
