@@ -17,7 +17,7 @@ def get_constituency_list(kml_file):
         for line in f:
             if 'Name' in line:
                 mo = re.search(">(.*)<", line)
-                name = ' '.join(mo.group(1).split()[:-2])
+                name = ' '.join(mo.group(1).split()[:-2]).replace(".", "")
 
             elif 'coordinates' in line:
                 mo = re.search("coordinates>(.*?)</coo", line)
