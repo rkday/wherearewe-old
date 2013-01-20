@@ -1,12 +1,11 @@
-<html>
-<head>
-    <title>Input</title>
-</head>
-<body>
-    <form action="/map/create" method="post">
-        <textarea name="q"></textarea>
-        {% csrf_token %}
-        <input type="submit" value="Create map">
-    </form>
-</body>
-</html>
+{% extends 'main_template.html' %}
+
+{% block title %}Input{% endblock %}
+{% block main %}
+<form action="/map/create" method="post">
+    <input type="text" name="mapname"/><br />
+    <textarea name="postcodes" cols="10" rows="20"></textarea><br />
+    {% csrf_token %}
+    <input type="submit" value="Create map">
+</form>
+{% endblock %}

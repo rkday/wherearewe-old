@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'waw_app.views.input_form'),
     url(r'^map/create$', 'waw_app.views.create_map'),
+    url(r'^map/see/(\w+)$', 'waw_app.views.produce_map'),
     # url(r'^wherearewe/', include('wherearewe.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

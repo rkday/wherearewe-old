@@ -1,12 +1,11 @@
 from django.db import models
 
 class Map(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True)
     postcodes = models.ManyToManyField('Postcode')
-    constituencies = models.ManyToManyField('ConstituencyCount')
 
 class Postcode(models.Model):
-    postcode = models.CharField(max_length=30)
+    postcode = models.CharField(max_length=30, unique=True)
     constituency = models.ForeignKey('Constituency')
 
 # Constituencies have some information which relates to them specifically -
@@ -15,11 +14,12 @@ class Postcode(models.Model):
 # separate concepts into the 'Constituency' and 'ConstituencyCount' models.
 
 class Constituency(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     population = models.IntegerField()
 
 class ConstituencyCount(models.Model):
     constituency = models.ForeignKey('Constituency')
+    map = models.ForeignKey('Map')
     count = models.IntegerField()
 
 

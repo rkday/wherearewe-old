@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'wherearewe',                      # Or path to database file if using sqlite3.
+        'NAME': 'dj_wherearewe',                      # Or path to database file if using sqlite3.
         'USER': 'wherearewe',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -78,7 +78,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '???'
+SECRET_KEY = '^%uq2y93mk11tadz#)9xvwf2agi)inae9uau@g@*bvwk@8&amp;awn'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -103,7 +103,7 @@ ROOT_URLCONF = 'wherearewe.urls'
 WSGI_APPLICATION = 'wherearewe.wsgi.application'
 
 TEMPLATE_DIRS = (
-    "EDIT_ME"
+    "/home/rob/Programming/Python/where-are-we/django/wherearewe/wherearewe/templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

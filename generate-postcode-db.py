@@ -71,7 +71,7 @@ def map_postcodes_to_constituencies(postcode_file, constituencies, verbose=False
 
 if __name__ == "__main__":
     constituencies = get_constituency_list("constituencies.kml")
-    (postcode_constituencies, unknowns) = map_postcodes_to_constituencies("test_postcodes.csv", constituencies)
+    (postcode_constituencies, unknowns) = map_postcodes_to_constituencies("all_postcodes.csv", constituencies)
     postcode_constituencies.update(guess_unknown_postcodes(unknowns, constituencies))
     
     for postcode in postcode_constituencies:

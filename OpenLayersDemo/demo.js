@@ -1,25 +1,6 @@
 var map;
 
-/* var constituencies = {
-    "Enfield": {
-        'colour': "#ff0000", 
-        'coordinates': [
-            [-0.0089485323999700921, 51.691874116882992],                   
-        [-0.0089485323999700921, 51.642421159771239],                   
-        [-0.16358970935660838,   51.642421159771239],                   
-        [-0.16358970935660838,   51.691874116882992]
-        ],
-        'text': 'cefg'}, 
-    "Bracknell": {'colour': "#00ff00",
-        'coordinates': [
-            [-0.71758674351924034,   51.331936236493796],                      
-        [-0.91841577448628076,   51.331936236493796],                      
-        [-0.91841577448628076,   51.427459835683521],                      
-        [-0.71758674351924034,   51.427459835683521]
-        ],
-        'text': 'abcd'} };
-*/
-function addConstituency(constituency, mapProj) {
+function addConstituency(constituency, constituency_info, mapProj) {
     var pt = OpenLayers.Geometry.Point;
     var proj = new OpenLayers.Projection("EPSG:4326");
     var arr = [];
@@ -30,7 +11,7 @@ function addConstituency(constituency, mapProj) {
     var constit = new OpenLayers.Geometry.Polygon(
             new OpenLayers.Geometry.LinearRing(arr));
     constit = constit.transform(proj, mapProj);
-    return new OpenLayers.Feature.Vector(constit, {'colour': constituency['colour'], 'text': constituency['text']} , null);
+    return new OpenLayers.Feature.Vector(constit, {'colour': constituency_info['colour'], 'text': constituency_info['text']} , null);
 }
 
 function init() {
@@ -90,7 +71,7 @@ function init() {
 
     var featarray = [];
     for (var key in constituencies) {
-    featarray.push(addConstituency(constituencies[key], map.getProjectionObject()));
+    featarray.push(addConstituency(constituencies[key], constituencies_info[key], map.getProjectionObject()));
     }
  var control = new OpenLayers.Control.SelectFeature(pointLayer);
  control.handlers.feature.stopDown = false; 
