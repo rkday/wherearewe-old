@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Input</title>
+</head>
+<body>
+    <form action="/map/create" method="post">
+        <textarea name="q"></textarea>
+        {% csrf_token %}
+        <input type="submit" value="Create map">
+    </form>
+</body>
+</html>
