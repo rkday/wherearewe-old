@@ -1,7 +1,7 @@
 import itertools
 from utils import get_constituency_list
 
-constituencies = get_constituency_list("constituencies.kml")
+constituencies = get_constituency_list(open("constituencies.kml"))
 colour_cycle = itertools.cycle(["#ff0000", "#00ff00", "#0000ff"])
 
 print "var constituency_polygons = {"

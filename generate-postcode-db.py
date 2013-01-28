@@ -70,7 +70,7 @@ def map_postcodes_to_constituencies(postcode_file, constituencies, verbose=False
     return (postcode_constituencies, unknowns)
 
 if __name__ == "__main__":
-    constituencies = get_constituency_list("constituencies.kml")
+    constituencies = get_constituency_list(open("constituencies.kml"))
     (postcode_constituencies, unknowns) = map_postcodes_to_constituencies(
             "all_postcodes.csv",
             constituencies)
